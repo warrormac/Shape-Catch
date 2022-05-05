@@ -10,14 +10,18 @@ public class VoiceMovement : MonoBehaviour
 {
 
     private KeywordRecognizer KeywordRecognizer;
+    public string game;
   
     private Dictionary<string, Action> actions = new Dictionary<string, Action>();
 
     public string firstlevel;
+    public string secondlevel;
     public GameObject optionsScreen;
+
     void Start()
     {
         actions.Add("Play Now", Play);
+        actions.Add("Test", Test);
         actions.Add("Credits", Options);
         actions.Add("Back", CloseOptions);
         actions.Add("Quit", Quit);
@@ -37,9 +41,20 @@ public class VoiceMovement : MonoBehaviour
 
 
 
+    public void Home()
+    {
+        SceneManager.LoadScene(game);     
+        
+    }
     public void Play()
     {
         SceneManager.LoadScene(firstlevel);    
+        
+    }
+
+        public void Test()
+    {
+        SceneManager.LoadScene(secondlevel);    
         
     }
 
@@ -51,6 +66,7 @@ public class VoiceMovement : MonoBehaviour
     public void CloseOptions()
     {
         optionsScreen.SetActive(false);
+        SceneManager.LoadScene(game);  
     }
     public void Quit()
     {
