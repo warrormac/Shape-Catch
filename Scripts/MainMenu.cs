@@ -9,12 +9,23 @@ public class MainMenu : MonoBehaviour
     public VoiceMovement voice { get; private set; }
     public GameObject optionsScreen;
 
+
+
+
     public void StartGame()
     {
 
         this.voice = voice;
         voice.Play();
     }
+
+    public void Test()
+    {
+        this.voice = voice;
+        voice.Test(); 
+    }
+
+
 
     public void OpenOptions()
     {
